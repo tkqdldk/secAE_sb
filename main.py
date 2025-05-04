@@ -1,5 +1,4 @@
 from aes import AES
-from Crypto.Cipher import DES
 from des_module import des, triple_des, PAD_PKCS5, ECB
 
 def aes_test():
@@ -34,7 +33,7 @@ def triple_des_test():
     print("\n==== Triple DES TEST ====")
     key = b"Sixteen byte key"  # 16 bytes for 2-key 3DES
     message = b"Confidential!!"  # Multiple of 8 bytes
-    cipher = triple_des(key, pad=b"\0", padmode=PAD_PKCS5)
+    cipher = triple_des(key, padmode=PAD_PKCS5)
     encrypted = cipher.encrypt(message)
     decrypted = cipher.decrypt(encrypted)
 
